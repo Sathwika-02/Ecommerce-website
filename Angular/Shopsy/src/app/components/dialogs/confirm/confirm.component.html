@@ -1,0 +1,16 @@
+<div class="container">
+<div class="header">
+    <button mat-icon-button [mat-dialog-close]="false">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  
+  <div mat-dialog-content>
+    Are you sure you want to add the item to the cart?
+  </div>
+  
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button [mat-dialog-close]="false" (click)="onNoClick()">No</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="onYesClick()">Yes</button>
+  </div>
+</div>

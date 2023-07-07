@@ -1,0 +1,119 @@
+<!--
+<header>
+  <div class="container">
+    <div class="containerheader">
+      <div class="logo">
+    <h3>Shopsy</h3>
+    </div>
+   <div class="addresscontainer">
+    <div class="iconaddress">
+      <button mat-button *ngIf="isGetLocationVisible" (click)="openPincodeDialog()" class="location-button"> <p style="color: white; margin-top: 2px;"> <i class="fa-solid fa-location-dot icon-location" style="color: white;"></i> Select your address<p> </button>
+        <div *ngIf="locationData" class="location-visible">
+          Deliver to: <br>
+          {{ extractLocality(locationData.results[0].formatted) }}, {{ extractPincode(locationData.results[0].formatted) }}
+          </div>
+    </div>
+   </div>
+
+
+   <div class="search-container">
+    <input type="text" class="search-input"/>
+    <div class="search-icon">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    </div>
+   </div>
+
+   <div class="login-container">
+    <p class="account">Account</p>
+   </div>
+
+   <div class="return-order-container">
+      <div class="order">Returns &Orders</div>
+   </div>
+
+   <div class="cart-cont">
+    <div class="badge bg-danger text-white" style="position: absolute; top: 1px; right: 110px; font-size: 10px; padding: 4px 8px; border-radius: 20%;">{{ totalItemNumber }}</div>
+    <i class="fa-solid fa-cart-shopping cart-shop"></i>
+    <a class="cart" routerLink="/cart">Cart </a>
+   
+
+    </div>
+   </div>
+  </div>
+</header>
+-->
+
+
+<header *ngIf="!isSignupOrLoginRoute()">
+  <div class="container">
+  <div class="navbar">
+    <div class="logo">
+     <img src="../assets/Images/images/one.jpg"  width="125px">
+  </div>
+  
+  <div class="addresscontainer">
+    <div class="iconaddress">
+      <button mat-button *ngIf="isGetLocationVisible" (click)="openPincodeDialog()" class="location-button"> <p style="color: black; margin-top: 2px;"> <i class="fa-solid fa-location-dot icon-location" style="color:black"></i> Select your address<p> </button>
+        <div *ngIf="locationData" class="location-visible" style="color: black;">
+          Deliver to: <br>
+          {{ extractLocality(locationData.results[0].formatted) }}, {{ extractPincode(locationData.results[0].formatted) }}
+          </div>
+    </div>
+   </div>
+  <!--<div class="search-container">
+    <input type="text" class="search-input"/>
+    <div class="search-icon">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    </div>
+   </div>-->
+   <!-- header.component.html -->
+<div class="search-container">
+  <input type="text" class="search-input" [formControl]="searchControl" [matAutocomplete]="auto" placeholder="Search" />
+  <div class="search-icon">
+    <i class="fas fa-search search-icon"></i>
+  </div>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="getProductIdAndRedirect(option)">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+</div>
+
+<div class="login">
+  <ng-container *ngIf="isLoggedIn(); else showLogin">
+    <div class="menu-container"><a routerLink="/product">Welcome {{ getUsername() }}</a>
+      <div class="menu">
+           <a routerLink="/profile">Profile</a>
+           <a routerLink="/orders">Orders</a>
+           <a (click)="logout()" class="logout">LogOut</a>
+       </div>
+       </div>
+    <!--Welcome {{ getUsername() }}!  <a (click)="logout()">Logout</a>-->
+  </ng-container>
+  <ng-template #showLogin>
+    <a routerLink="/login">Login</a>
+  </ng-template>
+  
+</div>
+<!--
+  <nav>
+    <ul id="MenuItems">
+      <li *ngIf="isLoggedIn"><a href="">Logout</a></li>
+      <li *ngIf="!isLoggedIn"><a href="" routerLink="/signup">Login/Signup</a></li>
+      <li><a href="">Account</a></li>
+
+    </ul>
+  </nav>
+-->
+  
+  <a class="cart-icon" routerLink="/cart">
+    <i class="fa fa-cart-shopping"></i>
+    <span class="badge">{{totalQuantity}}</span>
+  </a>
+  <!--<img src="/assets/Images/images/cart.png" width="30px" height="30px" routerLink="/cart">-->
+  <img src="/assets/Images/images/menu.png" class="menu-icon" onclick="menutoggle()">
+  </div> 
+  </div>
+</header>
+
+

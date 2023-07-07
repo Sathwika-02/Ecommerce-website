@@ -1,0 +1,40 @@
+.dialog-title {
+    font-size: 20px;
+    padding-left: 35px;
+    padding-top: 10px;
+  }
+  
+  .dialog-actions {
+    justify-content: flex-end;
+  }
+  
+  .cancel-button {
+    background-color: #FF9900;
+    color: #FFFFFF;
+    margin-right: 25px;
+    padding: 2px 10px;
+    margin-right: 20px;
+    border-radius: 4px;
+  }
+  
+  .post-button {
+    background-color: #FF9900;
+    color: #FFFFFF;
+    padding: 2px 10px;
+    margin-right: 20px;
+    border-radius: 4px;
+
+  }
+
+  .question-input {
+    width: 400px;
+    height: 120px;
+  }
+  
+  
+ 
+  
+  .error-message {
+    color: red;
+  }
+  

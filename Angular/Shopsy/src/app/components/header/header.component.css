@@ -1,0 +1,292 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+nav{
+  flex: 1;
+  text-align: right;
+}
+nav ul{
+  display: inline-block;
+  list-style: none;
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: #555;
+}
+p{
+  color: #555;
+}
+.container{
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.menu-icon{
+  width: 28px;
+  margin-left: 20px;
+  display: none;
+}
+
+.search-container{
+  margin-top: 12px;
+  margin-left: 90px;
+  width: 550px;
+  display: flex;
+  height: 35px;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 3px;
+  overflow: hidden;
+
+}
+.search-input{
+  width: 100%;
+  padding: 3px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+}
+
+.shopp{
+  width: 60px;
+}
+.cart-icon {
+  font-size: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: -16px;
+  right: 2px;
+  min-width: 15px;
+  height: 18px;
+  padding: 4px;
+  border-radius: 40%;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.badge--hidden {
+  display: none;
+}
+
+
+
+/* media-query */
+
+@media only screen and (max-width:800px){
+  nav ul{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+  }
+  nav ul li{
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  nav ul li a{
+    color: #fff;
+
+  }
+
+  .menu-icon{
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width:600px){
+  .row{
+    text-align: center;
+  }
+  .col-2,.col-3.col-4{
+    flex-basis: 100%;
+  }
+}
+
+
+
+/*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+}
+header{
+  background: rgb(19,25,33);
+  height: 65px;
+}
+.container{
+  width: 100%;
+ /*background-color: red;
+  height: 100%;
+  margin: auto;
+
+}
+.containerheader{
+  display: flex;
+}
+
+h3{
+ color: white;
+ font-size: 20px;
+ font-weight: bold;
+ padding-top: 16px;
+}*/
+.addresscontainer{
+  width: 150px;
+ margin-left: 0px;
+ padding-top: 8px;
+}
+.addresscontainer p{
+  margin: 0;
+}
+.iconaddress{
+  display: flex;
+  align-items: center;
+
+}
+.hello{
+  font-size: 0.8rem;
+  padding-left: 20px;
+  color: #ccc;
+}
+.icon-location{
+  margin-right: -2px;
+}
+.location-button{
+  margin-top: 2px;
+}
+.location-visible{
+  color: white;
+  font-size: 0.8rem;
+}
+.search-container{
+  margin-top: 8px;
+  margin-left: 0px;
+  width: 550px;
+  display: flex;
+  height: 35px;
+  justify-content: space-between;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: rgb(253,172,101);
+
+}
+.search-input{
+  width: 100%;
+  padding: 3px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+}
+
+.search-icon{
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+
+}
+
+.login-container{
+  margin-left: 40px;
+  margin-top: 20px;
+
+}
+.login-container p{
+  margin: 0;
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.account{
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.return-order-container{
+  color: white;
+  width: 100px;
+  margin-left: 40px;
+  margin-top: 10px;
+
+}
+.order{
+  font-size: 0.9rem;
+  font-weight: 420;
+}
+.cart-cont{
+  display: flex;
+  color: #eee;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.cart-shop{
+  margin-top: 2px;
+  font-size: 0.99rem;
+}
+.cart{
+  font-size: 1.1rem;
+}
+.login{
+  display: flex;
+}
+
+.menu-container{
+  position: relative;
+}
+
+.menu{
+  position: absolute;
+  z-index: 1;
+  background: whitesmoke;
+  display: none;
+  width: 200px;
+  height: 50px;
+}
+.menu-container:hover .menu{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  color: red;
+}
+.menu a{
+  width: 100%;
+  min-width: 8rem;
+  color: red;
+  margin-top: 5px;
+}
+.logout{
+  cursor: pointer;
+}
+

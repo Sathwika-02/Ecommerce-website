@@ -1,0 +1,23 @@
+<div class="details">
+  <p class="title">
+    <b>Title::</b> <a [routerLink]="['/detail/',data.id]" (click)="closeDialog()" class="title1">
+      {{ data.title }}
+    </a>
+  </p>
+  
+<p class="color"><b>Color:</b> {{ data.color }}</p>
+</div>
+<div class="dialog-content">
+  <div class="image-list">
+    <div class="small-image" *ngFor="let smallImage of data.smallImages">
+      <img [src]="smallImage.smallImage" class="small-img" alt="" srcset="" (click)="changeProductImage($event, smallImage.smallImage)">
+    </div>
+  </div>
+  <div class="preview" [ngClass]="{'zoomed-in': zoomedIn}" (click)="toggleZoom()">
+    <img [src]="data.mainImage" id="productImg1" alt="" srcset="">
+  </div>
+</div>
+<button mat-icon-button class="close-button" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+  

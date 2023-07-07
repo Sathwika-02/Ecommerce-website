@@ -1,0 +1,67 @@
+/* forgot-password.component.css */
+
+.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1090px;
+  }
+  
+  .panel {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .panel-heading {
+    background-color: #f8f8f8;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .panel-body {
+    padding: 20px;
+  }
+  
+  .input-field {
+    position: relative;
+    padding-left: 10px;
+  }
+  
+  .input-field input {
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .input-field span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: #999;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  

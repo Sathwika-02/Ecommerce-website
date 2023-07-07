@@ -1,0 +1,45 @@
+.dialog-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    margin-left: 30px;
+  }
+  
+  .input-container {
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+  }
+  
+  .pincode-input {
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .cancel-button {
+    margin-right: 23px;
+    background-color: #e7e7e7;
+    color: #222222;
+  }
+  
+  .submit-button {
+    background-color: #FF9900;
+    color: #FFFFFF;
+    margin-right: 25px;
+  }
+  
+  .submit-button:hover {
+    background-color: #FFB84D;
+  }
+  

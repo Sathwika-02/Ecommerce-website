@@ -1,0 +1,43 @@
+.faq-item {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    align-items: center;
+  }
+  .display{
+    display: flex;
+  }
+  
+  .faq-item h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  
+  .faq-item textarea {
+    width: 50%;
+    height: 100px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 20px;
+    align-items: center;
+  }
+  
+  .faq-item button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    margin-top: 50px;
+
+  }
+  
+  .faq-item button:hover {
+    background-color: #0056b3;
+  }
+  

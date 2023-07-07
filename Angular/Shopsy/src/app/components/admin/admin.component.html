@@ -1,0 +1,7 @@
+<div *ngFor="let faq of faqs" class="faq-item">
+  <h3>{{ faq.question }}</h3>
+  <div class="display">
+  <textarea [(ngModel)]="faq.answer" placeholder="Enter answer"></textarea>
+  <button (click)="updateFAQs()">Save Answer</button>
+  </div>
+</div>

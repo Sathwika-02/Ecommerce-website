@@ -1,0 +1,32 @@
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+  h2{
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+  
+  .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-row label {
+    width: 120px;
+  }
+  
+  .submit-row {
+    justify-content: end;
+    margin-left: 350px;
+  }
+  .submit-button {
+    background-color: #FF9900;
+    color: #FFFFFF;
+    border: 2px solid #FF9900;
+    padding: 5px;
+  }
+  

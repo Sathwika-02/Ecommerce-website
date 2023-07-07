@@ -1,0 +1,91 @@
+<!--<form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" formControlName="fullName" required>
+    </div>
+    <div>
+      <label for="addressLine1">Address Line 1:</label>
+      <input type="text" id="addressLine1" formControlName="addressLine1" required>
+    </div>
+    <div>
+      <label for="addressLine2">Address Line 2:</label>
+      <input type="text" id="addressLine2" formControlName="addressLine2">
+    </div>
+    <div>
+      <label for="city">City:</label>
+      <input type="text" id="city" formControlName="city" required>
+    </div>
+    <div>
+      <label for="state">State:</label>
+      <input type="text" id="state" formControlName="state" required>
+    </div>
+    <div>
+      <label for="zipCode">ZIP Code:</label>
+      <input type="text" id="zipCode" formControlName="zipCode" required>
+    </div>
+    <button type="submit">Submit</button>
+  </form>-->
+
+  <div class="outer">
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+          <div class="panel border bg-white">
+            <div class="panel-heading">
+              <h3 class="pt-3 font-weight-bold">Add Shipping Address</h3>
+            </div>
+            <div class="panel-body p-3">
+              <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+                <div class="form-group pt-3">
+                  <div class="input-field" [class.error]="addressForm.controls['fullName'].dirty && addressForm.controls['fullName'].hasError('required')">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="fullName" type="text" placeholder="fullName">
+                  </div>
+                  <small *ngIf="addressForm.controls['fullName'].dirty && addressForm.controls['fullName'].hasError('required')" class="text-danger">*fullName is required*</small>
+                </div>
+                <div class="form-group pt-3">
+                  <div class="input-field" [class.error]="addressForm.controls['addressLine1'].dirty && addressForm.controls['addressLine1'].hasError('required')">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="addressLine1" type="text" placeholder="Address">
+                  </div>
+                  <small *ngIf="addressForm.controls['addressLine1'].dirty && addressForm.controls['addressLine1'].hasError('required')" class="text-danger">Address is required*</small>
+                </div>
+                <div class="form-group pt-3">
+                  <div class="input-field" [class.error]="addressForm.controls['addressLine2'].dirty && addressForm.controls['addressLine2'].hasError('required')">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="addressLine2" type="text" placeholder="addressLine2">
+                  </div>
+                  <small *ngIf="addressForm.controls['addressLine2'].dirty && addressForm.controls['addressLine2'].hasError('required')" class="text-danger">Address is required*</small>
+                </div>
+                <div class="form-group pt-3">
+                  <div class="input-field" [class.error]="addressForm.controls['city'].dirty && addressForm.controls['city'].hasError('required')">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="city" type="text" placeholder="Enter city">
+                  </div>
+                  <small *ngIf="addressForm.controls['city'].dirty && addressForm.controls['city'].hasError('required')" class="text-danger">City is required*</small>
+                </div>
+                <div class="form-group pt-3">
+                  <div class="input-field" [class.error]="addressForm.controls['state'].dirty && addressForm.controls['state'].hasError('required')">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="state" type="text" placeholder="Enter state">
+                  </div>
+                  <small *ngIf="addressForm.controls['state'].dirty && addressForm.controls['state'].hasError('required')" class="text-danger">State is required*</small>
+                </div>
+                <div class="form-group pt-3">
+                  <div class="input-field" [class.error]="addressForm.controls['zipCode'].dirty && addressForm.controls['zipCode'].hasError('required')">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="zipCode" type="text" placeholder="zipCode">
+                  </div>
+                  <small *ngIf="addressForm.controls['zipCode'].dirty && addressForm.controls['zipCode'].hasError('required')" class="text-danger">zipCode is required*</small>
+                </div>
+  
+                <button type="submit" class="btn btn-primary btn-block mt-4 w-100">Order Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

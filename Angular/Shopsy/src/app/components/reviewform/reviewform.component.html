@@ -1,0 +1,23 @@
+<h2>Add Review</h2>
+<form [formGroup]="reviewForm" (ngSubmit)="submitReview()" class="review-form" enctype="multipart/form-data">
+  <div class="form-row">
+    <label for="author">Author:</label>
+    <input type="text" id="author" formControlName="author" required>
+  </div>
+  <div class="form-row">
+    <label for="rating">Rating:</label>
+    <input type="number" id="rating" formControlName="rating" required>
+  </div>
+  <div class="form-row">
+    <label for="comment">Comment:</label>
+    <textarea id="comment" formControlName="comment" required></textarea>
+  </div>
+  <div>
+    <label for="media">Media (Image or Video):</label>
+    <input type="file" id="media" (change)="onFileSelected($event)" accept="image/*, video/*">
+  </div>
+
+  <div class="form-row submit-row">
+    <button type="submit" class="submit-button">Submit Review</button>
+  </div>
+</form>

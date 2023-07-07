@@ -1,0 +1,222 @@
+
+<div class="hero" *ngIf="productData">
+    <div class="row">
+        <div class="col">
+            <div class="slider">
+                <div class="product" >
+                    <div class="product-image1" *ngFor="let smallImage of productData.smallImages">
+                        <img [src]="smallImage.smallImage" width="100%" class="small-img" alt="" srcset="" (click)="changeProductImage($event, smallImage.smallImage)">
+                      </div>
+                      
+                </div>
+                <div class="preview">
+                    <img class="product-image" [src]="productData.image" id="productImg" alt="" srcset=""  (click)="openProductDialog()">
+                    <p class="view">Click to open expanded view</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content">
+                <h2>{{productData.title}}</h2>
+                <div class="product-rating">
+                    <span class="star" *ngFor="let _ of getStars(productData.rating)">&#9733;</span>
+                  </div>
+                  <h4 class="discount">
+                    <span class="discount-percentage">-{{ productData.discount * 100 }}%</span>
+                    <span class="discounted-price">{{ (productData.price - (productData.price * (+productData.discount))) | currency:'INR' }}</span>
+                  </h4>
+                  <h3 class="price">M.R.P: {{ productData.price | currency:'INR' }}</h3>
+        <h5 class="class1"> <span class="desc">Description:</span> {{productData.description}}</h5>
+        <h5 class="class1"><span class="desc">Category:</span>{{productData.category}}</h5>
+        <h5 class="class1"><span class="desc">Color:</span>{{productData.color}}</h5> <br>
+
+        <div class="col">
+          <div class="related-products">
+            <div class="related-product" *ngFor="let relatedProduct of filteredProducts1">
+            <img [src]="relatedProduct.image" class="small-image" alt="" srcset="" [style.backgroundColor]="relatedProduct.hovered ? relatedProduct.color : ''" style="max-width: 100px; max-height: 100px;"  (mouseover)="changeProductColor(relatedProduct.color)"    (mouseout)="resetProductColor(relatedProduct)"  (click)="redirectToProduct(relatedProduct.id)">
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <button class="btn1" (click)="openDialog(productData)"> <i class="fa-solid fa-cart-shopping"></i>Add to Cart</button>
+        <button class="btn2">Buy Now</button>
+        <br>
+        <button (click)="openReviewFormDialog()" class="btn1">Add Review</button>
+                </div>
+            
+        </div>
+    </div>
+    
+<br>
+<br>
+
+  <div class="small-container">
+<div class="row">
+    <h2 class="title">Related Products</h2>
+<div class="col-4" *ngFor="let item of filteredProducts | filter:searchKey:'title'">
+    <img [src]=item.image class="img-1" alt="" (click)="navigateToDetail(item.id)">
+    <div class="product-title" ><h2>{{item.title}}</h2> </div>
+    <div class="product-rating">
+        <span class="star" *ngFor="let _ of getStars(item.rating)">&#9733;</span>
+      </div>
+     
+     <span class="price">{{item.price | currency:'INR'}}</span>
+     
+     <button class="btn add-to-cart-button small" (click)="openDialog(item)">
+        Add to cart
+      </button>
+    <!---  <i class="fa-solid fa-bag-shopping shopping-bag-icon"></i>-->
+      </div>
+</div>
+<!--
+<div class="small-container">
+  <div class="row">
+    <h2 class="title">Related Products</h2>
+    <ng-image-slider [images]="filteredProducts" [imageSize]="{ width: '300px', height: '300px' }">
+      <ng-template ng-image-slider let-image>
+        <div class="col-4">
+          <img [src]="image" class="img-1" alt="Product Image">
+          <div class="product-title">
+            <h2>{{ image.title }}</h2>
+            <span class="price">{{ image.price | currency: 'INR' }}</span>
+          </div>
+        </div>
+      </ng-template>
+    </ng-image-slider>
+    </div>
+    </div>
+    </div>-->
+  
+ 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="wrapper">
+  <h2>Looking for Specific info?</h2>
+
+  <div class="search-bar">
+    <div class="search-input-container">
+      <input type="text" [(ngModel)]="searchKeyword" placeholder="Search FAQs" (input)="searchFAQs()" class="search-input">
+    </div>
+    <h2>Customer questions & answers</h2>
+    <ul *ngIf="showResults">
+      <li *ngFor="let faq of filteredFaqs" (click)="selectFAQ(faq)" class="faq-container">
+        <div>
+          <h4 class="ques"><span class="qu">Question:</span>{{ faq.question }}</h4>
+          <p class="answers"><span class="qu">Answer:</span> {{ faq.answer }}</p>
+        </div>
+      </li>
+      
+      <li *ngIf="filteredFaqs.length === 0 && !showMoreQuestionsClicked" class="post-question-container">
+        <p>Don't see the answer you're looking for?</p>
+        <span>
+          <button class="button" mat-raised-button color="primary" (click)="openPostQuestionDialog()">Post Your Question</button>
+        </span>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div *ngIf="!showResults">
+    <div class="faq-container" *ngFor="let faq of faqs.slice(0, 3)">
+      <h4 class="ques"><span class="qu">Question:</span>{{ faq.question }}</h4>
+      <p class="answers"><span class="qu">Answer:</span> {{ faq.answer }}</p>
+    </div>
+    <button  *ngIf="faqs.length > 3 && !showMoreQuestionsClicked" (click)="showMoreQuestions()" class="show-more-button">See More Questions</button>
+    <div *ngIf="showMoreQuestionsClicked">
+      <ng-container *ngFor="let faq of faqs.slice(3)">
+        <div class="faq-container">
+          <h4 class="ques"><span class="qu">Question:</span>{{ faq.question }}</h4>
+          <p class="answers"><span class="qu">Answer:</span> {{ faq.answer }}</p>
+        </div>
+      </ng-container>
+      <button (click)="showLessQuestions()" class="show-more-button">See Less  Questions</button>
+    </div>
+  </div>
+</div>
+
+  
+
+<br>
+<br>
+<div class="review-container">
+<div *ngIf="imageGridReviews && imageGridReviews.length > 0;">
+  <h2 class="review-title">Reviews with Images</h2>
+  <ul class="image-grid">
+    <li class="review" *ngFor="let review of imageGridReviews">
+      <div class="uploaded-images">
+        <img [src]="'http://127.0.0.1:8000' + review.media" alt="Product Image" class="product-image" (click)="openReviewDialog(review)">
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<div class="sort-dropdown" *ngIf="reviews && reviews.length > 0">
+  <select class="sort-select" (change)="onSortChange($event)">
+    <option value="rating">Top Reviews</option>
+    <option value="recent">Most Recent</option>
+  </select>
+</div>
+
+<div class="reviews">
+    <h2 class="review-title">Top Reviews from India</h2>
+    <div *ngIf="reviews && reviews.length > 0; else noReviews">
+      <ul>
+        <li class="review-item" *ngFor="let review  of reviews">
+          <div class="review-header">
+            <div class="review-info">
+              <i class="fa-solid fa-user"></i> <span class="author">{{ review.author }}</span> 
+              <br>
+              <ng-container *ngIf="review.media">
+                <a [href]="'http://127.0.0.1:8000' + review.media" target="_blank">
+                <img  [src]="'http://127.0.0.1:8000' + review.media" alt="Review Image" class="review-image">
+                </a>
+              </ng-container>
+              <div class="rating">
+                <span class="star" *ngFor="let _ of getStars(review.rating)">&#9733;</span>
+              </div>
+            </div>
+           
+          <p class="comment">{{ review.comment }}</p>
+    </div>
+      </ul>
+    </div>
+    </div>
+    <ng-template #noReviews>
+      <p>No reviews available.</p>
+    </ng-template>
+
+    </div>
+    
+    <ng-template #reviewDialogTemplate let-data>
+      <div class="review-details">
+        <div class="review-image1">
+        <img  [src]="'http://127.0.0.1:8000' + data.review.media" alt="Review Image" class="review-image">
+        </div>
+        <div class="review-det">
+          <i class="fa-solid fa-user"></i> <span class="author">{{ data.review.author }}</span> 
+        <div class="rating">
+          <span class="star" *ngFor="let _ of getStars(data.review.rating)">&#9733;</span>
+        </div>
+        <h5 class="comment">{{ data.review.comment }}</h5>
+        </div>
+        <div class="dialog">
+          <button class="close-button" (click)="closeDialog()">&times;</button>
+          <!-- Dialog content goes here -->
+        </div>
+        
+      </div>
+    </ng-template>
+    
+    
+  
+    </div>
+
+ 

@@ -1,0 +1,279 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('men\'s clothing')">
+                <img src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JuneWRS/eventpage/HALOS/Men__unselected._SS300_QL85_FMpng_.png"
+                    alt="">
+                <h6>Mens Clothing</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('electronics')">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('footwear')">
+                <img src="https://m.media-amazon.com/images/G/31/img21/shoes/2023/WRS23/Halos/sneakerex._CB587552598_.jpg"
+                    alt="">
+                <h6>Footwear</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('women\'s clothing')">
+                <img src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JuneWRS/eventpage/HALOS/Women__unselected._SS300_QL85_FMpng_.png"
+                    alt="">
+                <h6>Womens Clothing</h6>
+            </a>
+
+        </div>
+        <div class="item">
+            <a (click)="filter('watches')">
+                <img src="  https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JuneWRS/eventpage/HALOS/Watches_unselected._SS300_QL85_FMpng_.png"
+                    alt="">
+                <h6>Watches</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('books')">
+                <img src="https://media.istockphoto.com/id/509862358/vector/flat-icon-is-a-stack-of-books.jpg?s=1024x1024&w=is&k=20&c=dj5-8W7S5aRe7h-x17bVwDi315D5fOZEbI3LJr0HHQQ="
+                    alt="">
+                <h6>Books</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('luggage')">
+                <img src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JuneWRS/eventpage/HALOS/LuggageBags_unselected._SS300_QL85_FMpng_.png"
+                    alt="">
+                <h6>Luggage and Bags</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('jewelery')">
+                <img src=" https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JuneWRS/eventpage/HALOS/Jewellery_unselected._SS300_QL85_FMpng_.png"
+                    alt="">
+                <h6>Jewellery</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('beauty')">
+                <img src="https://m.media-amazon.com/images/G/31/img23/Fashion/Event/JuneWRS/eventpage/HALOS/Beauty_unselected._SS300_QL85_FMpng_.png"
+                    alt="">
+                <h6>Beauty</h6>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="sort">
+    
+
+        <div class="column">
+            <select name="" id="" (change)="sort($event)">
+                <option value="default">Default Sorting</option>
+                <option value="asc">Price Low to High</option>
+                <option value="dsc">Price High to Low</option>
+                <option value="popularity">Sort By Popularity</option>
+                <option value="rating">Sort By Rating</option>
+            </select>
+        </div>
+
+
+    </div>
+    
+
+<section class="page-section">
+    <div class="container">
+        <div class="row1">
+
+            <div class="col-lg-3 blog-form">
+                <div class="delivery-date">
+                    <h2 class="blog-title">Delivery Day</h2>
+                    <div class="delivery-options">
+                      <div class="delivery-option">
+                        <input type="checkbox" id="todayCheckbox" (change)="handleDeliveryCheckbox(0)">
+                        <label for="todayCheckbox">Get it by Today</label>
+                      </div>
+                      <div class="delivery-option">
+                        <input type="checkbox" id="tomorrowCheckbox" (change)="handleDeliveryCheckbox(1)">
+                        <label for="tomorrowCheckbox">Get it by Tomorrow</label>
+                      </div>
+                      <div class="delivery-option">
+                        <input type="checkbox" id="twoDaysCheckbox" (change)="handleDeliveryCheckbox(2)">
+                        <label for="twoDaysCheckbox">Get It in 2 days</label>
+                      </div>
+                      <div class="delivery-option">
+                        <input type="checkbox" id="moreThanThreeDaysCheckbox" (change)="handleDeliveryCheckbox(3)">
+                        <label for="moreThanThreeDaysCheckbox">Get It in more than 3 days</label>
+                      </div>
+                    </div>
+                  </div>
+                <h2 class="blog-title">Categories</h2>
+                <p class="blog-sidebar-list"  (click)="filter('men\'s clothing')" style="cursor: pointer;" ><span class="list-icon"> > </span> Men's Clothing</p>
+                <p class="blog-sidebar-list" (click)="filter('women\'s clothing')" style="cursor: pointer;" ><span class="list-icon"> > </span> Women's Clothing</p>
+                <p class="blog-sidebar-list" (click)="filter('jewelery')" style="cursor: pointer;" ><span class="list-icon"> > </span> Jewellery</p>
+                <p class="blog-sidebar-list" (click)="filter('beauty')" style="cursor: pointer;" ><span class="list-icon"> > </span> Beauty Products</p>
+                <p class="blog-sidebar-list" (click)="filter('electronics')" style="cursor: pointer;" ><span class="list-icon"> > </span> Electronics</p>
+
+
+                <div class="price-container">
+                    <div class="productslider1">
+                        <h2 class="blog-title">Price</h2>
+                        <div class="price-range" (click)="filterByPriceRange(0, 300)">Under &#8377;300</div>
+                        <div class="price-range" (click)="filterByPriceRange(300,500)">&#8377;300 - &#8377;500</div>
+                        <div class="price-range" (click)="filterByPriceRange(500, 1000)">&#8377;500 - &#8377;1000</div>
+                        <div class="price-range" (click)="filterByPriceRange(1000, 1500)">&#8377;1000 - &#8377;1500</div>
+                        <div class="price-range" (click)="filterByPriceRange(1500, 1000000)">Above &#8377;1500</div>
+                        <input type="number" [(ngModel)]="startValue" placeholder="min" class="input-field" inputmode="numeric">
+                        <input type="number" [(ngModel)]="endValue" placeholder="max" class="input-field">
+                        <button (click)="filterProductsByRange()" class="filter-button">Go</button>
+                    </div>
+                    </div>
+
+                
+                <div class="product-rating">
+                    <h2 class="blog-title">Customer reviews</h2>
+                    <div class="one" (click)="filterByRating(4)" style="cursor: pointer;">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star-empty">&#9734;</span> & up
+                    </div>
+                    <div class="two" (click)="filterByRating(3)"  style="cursor: pointer;">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-empty">&#9734;</span>
+                        <span class="star-empty">&#9734;</span> & up
+                    </div>
+                    <div class="three" (click)="filterByRating(2)"  style="cursor: pointer;">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-empty">&#9734;</span>
+                        <span class="star-empty">&#9734;</span>
+                        <span class="star-empty">&#9734;</span> & up
+                    </div>
+                    <div class="four" (click)="filterByRating(2)"  style="cursor: pointer;">
+                        <span class="star">&#9733;</span>
+                        <span class="star-empty">&#9734;</span>
+                        <span class="star-empty">&#9734;</span>
+                        <span class="star-empty">&#9734;</span>
+                        <span class="star-empty">&#9734;</span> & up
+                    </div>
+                  </div>
+                  <div class="discount">
+                    <h2 class="blog-title">Discount</h2>
+
+                    <div class="discount-range" (click)="filterByDiscountRange(10)">10% Off or more</div>
+                    <div class="discount-range" (click)="filterByDiscountRange(25)">25% Off or more</div>
+                    <div class="discount-range" (click)="filterByDiscountRange(35)">35% Off or more</div>
+                    <div class="discount-range" (click)="filterByDiscountRange(50)">50% Off or more</div>
+                    <div class="discount-range" (click)="filterByDiscountRange(60)">60% Off or more</div>
+                    <div class="discount-range" (click)="filterByDiscountRange(70)">70% Off or more</div>
+                  </div>
+                
+
+
+            </div>
+        </div>
+        <div class="row">
+            
+            <h2 class="title">All Products</h2>
+
+            <div class="col-4" *ngFor="let item of filteredProducts | filter:searchKey:'title'">
+                <img src="{{item.image}}" class="img-1" alt="" routerLink="/detail/{{item.id}}">
+                <div class="product-title">
+                    <h2>{{item.title}}</h2>
+                </div>
+                <div class="product-rating">
+
+                    <span class="star" *ngFor="let _ of getStars(item.rating)">&#9733;</span> 
+                    <span  *ngIf="item.discount > 0" class="discount-percentage">Save {{ (item.discount * 100) | number:'1.0-0' }}%</span>
+                </div> 
+               
+                <span  *ngIf="item.discount > 0" class="discount-price">{{ (item.price - (item.price * (+item.discount))) | currency:"INR"}}</span>
+                 <span class="mrp"> M.R.P </span><span class="actual-price" *ngIf="item.discount"  [ngStyle]="{ 'text-decoration': item.discount > 0 ? 'line-through' : 'none' }">{{ item.price | currency:'INR' }}  </span>
+               
+                <div class="delivery-date">
+                    <span class="delivery" *ngIf="item.delivery_day === 0">Delivery by Today</span>
+                    <span class="delivery" *ngIf="item.delivery_day ===1">Delivery by Tomorrow</span>
+                    <span class="delivery" *ngIf="item.delivery_day ===2">Delivery with in 2days</span>
+                    <span class="delivery" *ngIf="item.delivery_day >=3">Delivery with in a week</span>
+                  </div>
+               
+                
+              <!---- <button class="btn add-to-cart-button small" (click)="openDialog(item)">
+                    Add to cart
+                </button>-->
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+
+<!--
+
+
+
+
+
+
+
+
+
+
+<div class="small-container">
+
+    <div class="row">
+        <div class="productslider">
+            <h3>Price</h3>
+            <input type="number" [(ngModel)]="startValue" placeholder="min" class="input-field" inputmode="numeric">
+            <input type="number" [(ngModel)]="endValue" placeholder="max" class="input-field">
+            <button (click)="filterProductsByRange()" class="filter-button">Go</button>
+        </div>
+        <select name="" id="" (change)="sort($event)">
+            <option value="default">Default Sorting</option>
+            <option value="asc">Price Low to High</option>
+            <option value="dsc">Price High to Low</option>
+            <option value="popularity">Sort By Popularity</option>
+            <option value="rating">Sort By Rating</option>
+        </select>
+
+
+
+
+
+        <h2 class="title">All Products</h2>
+
+        <div class="col-4" *ngFor="let item of filteredProducts | filter:searchKey:'title'">
+            <img src="{{item.image}}" class="img-1" alt="" routerLink="/detail/{{item.id}}">
+            <div class="product-title">
+                <h2>{{item.title}}</h2>
+            </div>
+            <div class="product-rating">
+
+                <span class="star" *ngFor="let _ of getStars(item.rating)">&#9733;</span>
+            </div>
+
+            <span class="price">{{item.price | currency:'INR'}}</span>
+            <button class="btn add-to-cart-button small" (click)="openDialog(item)">
+                Add to cart
+            </button>
+             <i class="fa-solid fa-bag-shopping shopping-bag-icon"></i>
+
+        </div>
+    </div>
+</div>-->
+
+
+
+
+
+
+
+
+
